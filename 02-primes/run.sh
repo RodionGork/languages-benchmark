@@ -16,6 +16,8 @@ echo -n "Pypy3: " 1>&2 ; $TIME pypy primes.py
 
 echo -n "TCL: " 1>&2 ; $TIME tclsh primes.tcl
 
+echo -n "TCL (array): " 1>&2 ; $TIME tclsh primes_a.tcl
+
 echo -n "Lua: " 1>&2 ; $TIME lua primes.lua
 
 echo -n "LuaJit: " 1>&2 ; $TIME luajit primes.lua

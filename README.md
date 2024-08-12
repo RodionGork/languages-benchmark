@@ -44,13 +44,11 @@ show better performance compared to "random-access".
     cd 02-primes
     ./run.sh >/dev/null
 
-    Go: 4.95
-    PHP: 11.98
-    Python3: 42.75
-    Pypy3: 7.27
-    TCL: 63.12
-    Lua: 33.61
+    Go: 4.79
+    PHP: 12.10
+    Python3: 42.57
+    Pypy3: 7.31
+    TCL: 63.30
+    TCL (array): 104.78
+    Lua: 33.75
     LuaJit: 2.18
-
-_TCL is poor here - as many shell-languages it uses lists in form of space-separated string,
-worth trying associative arrays yet. Why Go is slower than LuaJit - is an open question._
