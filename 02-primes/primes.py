@@ -16,6 +16,6 @@ while True:
   if is_prime(n):
     primes.append(n)
     if len(primes) == target:
-      print('primes[%s] == %s' % (target, primes[-1]))
+      print('primes[%s] = %s' % (target, primes[-1]))
       break
   n += 2

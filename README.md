@@ -37,12 +37,20 @@ number of inner iterations is on order of `10^8`. Here are example times (may so
 
 ### Primes - nested loops involving arrays
 
-This requires some cleanup and adding couple more reference languages yet...
-Note that algorithm uses arrays mostly in "sequential" order which may
+Here we build array of the first `1mln` primes using naive "trial division"
+algorithm. Note that algorithm uses arrays mostly in "sequential" order which may
 show better performance compared to "random-access".
 
-    PHP: 11.93
-    Python3: 43.05
-    Pypy3: 7.28
-    Lua: 33.89
+    cd 02-primes
+    ./run.sh >/dev/null
+
+    Go: 4.95
+    PHP: 11.98
+    Python3: 42.75
+    Pypy3: 7.27
+    TCL: 63.12
+    Lua: 33.61
     LuaJit: 2.18
+
+_TCL is poor here - as many shell-languages it uses lists in form of space-separated string,
+worth trying associative arrays yet. Why Go is slower than LuaJit - is an open question._
