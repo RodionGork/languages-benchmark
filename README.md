@@ -38,9 +38,11 @@ number of inner iterations is on order of `10^8`. Here are example times (may so
 ### Primes - nested loops involving arrays
 
 This requires some cleanup and adding couple more reference languages yet...
+Note that algorithm uses arrays mostly in "sequential" order which may
+show better performance compared to "random-access".
 
-    PHP: 14.24
-    Python3: 64.63
-    Pypy3: 6.57
-    Lua: 20.86
-    LuaJit: 1.19
+    PHP: 11.93
+    Python3: 43.05
+    Pypy3: 7.28
+    Lua: 33.89
+    LuaJit: 2.18

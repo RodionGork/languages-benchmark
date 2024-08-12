@@ -2,24 +2,23 @@
 
 $target = getenv('MAXN');
 
+$primes = [2, 3, 5, 7];
+
 function is_prime($x) {
-  if ($x % 2 == 0) {
-    return false;
+  global $primes;
+  foreach ($primes as $d) {
+    if ($d * $d > $x)
+        return true;
+    if ($x % $d == 0)
+        return false;
   }
-  for ($d = 3; $d * $d <= $x; $d += 2) {
-    if ($x % $d == 0) {
-      return false;
-    }
-  }
-  return true;
 }
 
-$c = 1;
-for ($n = 3; true; $n += 2) {
+for ($n = 9; true; $n += 2) {
   if (is_prime($n)) {
-    $c += 1;
-    if ($c == $target) {
-      echo "primes[$c] = $n\n";
+    $primes[] = $n;
+    if (count($primes) == $target) {
+      echo "primes[$target] = " . $primes[$target-1] . "\n";
       break;
     }
   }

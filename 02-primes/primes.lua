@@ -1,22 +1,20 @@
 target = tonumber(os.getenv('MAXN'))
 
+primes = {2, 3, 5, 7}
+
 function is_prime(x)
-  if x % 2 == 0 then return false end
-  local d = 3
-  while d * d <= x do
+  for _, d in ipairs(primes) do
+    if d * d > x then return true end
     if x % d == 0 then return false end
-    d = d + 2
   end
-  return true
 end
 
-c = 1
-n = 3
+n = 9
 while true do
   if is_prime(n) then
-    c = c + 1
-    if c == target then
-      print('primes[' .. c .. '] = ' .. n)
+    primes[#primes+1] = n
+    if #primes == target then
+      print('primes[' .. target .. '] = ' .. primes[#primes])
       break
     end
   end

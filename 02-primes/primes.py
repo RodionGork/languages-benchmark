@@ -2,22 +2,20 @@ import os
 
 target = int(os.getenv('MAXN'))
 
+primes = [2, 3, 5, 7]
+
 def is_prime(x):
-  if x % 2 == 0:
-    return False
-  d = 3
-  while d * d <= x:
+  for d in primes:
+    if d * d > x:
+      return True
     if x % d == 0:
       return False
-    d += 2
-  return True
 
-c = 1
-n = 3
+n = 9
 while True:
   if is_prime(n):
-    c += 1
-    if c == target:
-      print('primes[%s] == %s' % (c, n))
+    primes.append(n)
+    if len(primes) == target:
+      print('primes[%s] == %s' % (target, primes[-1]))
       break
   n += 2

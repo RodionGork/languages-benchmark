@@ -1,6 +1,6 @@
 #!/bin/sh
 
-export MAXN=500000
+export MAXN=1000000
 TIME="/usr/bin/time -f %e"
 
 # just to pre-compile
