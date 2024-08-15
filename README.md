@@ -48,7 +48,8 @@ show better performance compared to "random-access".
     PHP: 12.10
     Python3: 42.57
     Pypy3: 7.31
-    TCL: 63.30
+    TCL (list): 63.30
     TCL (array): 104.78
+    TCL (dict): 112.41
     Lua: 33.75
     LuaJit: 2.18

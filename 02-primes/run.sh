@@ -18,6 +18,8 @@ echo -n "TCL: " 1>&2 ; $TIME tclsh primes.tcl
 
 echo -n "TCL (array): " 1>&2 ; $TIME tclsh primes_a.tcl
 
+echo -n "TCL (dict): " 1>&2 ; $TIME tclsh primes_d.tcl
+
 echo -n "Lua: " 1>&2 ; $TIME lua primes.lua
 
 echo -n "LuaJit: " 1>&2 ; $TIME luajit primes.lua
