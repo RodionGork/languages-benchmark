@@ -1,7 +1,11 @@
 #!/bin/sh
 
-export MAXN=1000000
+export MAXN=3000000
 TIME="/usr/bin/time -f %e"
+
+gcc -O2 collatz.c
+echo -n "C (long long): " 1>&2; $TIME ./a.out
+rm a.out
 
 go build collatz.go
 echo -n "Go: " 1>&2 ; $TIME ./collatz

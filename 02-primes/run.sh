@@ -3,16 +3,24 @@
 export MAXN=1000000
 TIME="/usr/bin/time -f %e"
 
+gcc -O2 primes.c
+echo -n "C (long long): " 1>&2; $TIME ./a.out
+rm a.out
+
 go build primes.go
 echo -n "Go: " 1>&2 ; $TIME ./primes
 rm primes
 
-go build primes_a.go
-echo -n "Go (prealloc): " 1>&2 ; $TIME ./primes_a
-rm primes_a
+go build primes32.go
+echo -n "Go (int32): " 1>&2 ; $TIME ./primes32
+rm primes32
 
 javac primes.java
 echo -n "Java: " 1>&2 ; $TIME java Primes
+rm Primes.class
+
+javac primes64.java
+echo -n "Java (long): " 1>&2 ; $TIME java Primes
 rm Primes.class
 
 echo -n "PHP: " 1>&2 ; $TIME php primes.php

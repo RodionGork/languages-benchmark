@@ -13,28 +13,24 @@ fragments.
 There are several subfolders because we may expect that performance depends on specific
 task, data structures used etc.
 
-_`Go` is used as a "reference" for natively-compiled language, though it is not 100%-correct
-because it uses automatic memory management. In other words it performs close to other
-natively-compiled languages unless heavy memory manipulations are involved.
-If you want to be sure, write in `C` :)_
-
 ### Collatz - simple loops with scalars
 
-These script execute collatz sequence for numbers from `1` to `1mln`, this involves main
+These script execute collatz sequence for numbers from `1` to `3mln`, this involves main
 loop for million iteration - and internal loop in the collatz function - thus total
 number of inner iterations is on order of `10^8`. Here are example times (may somewhat differ on your machine):
 
     cd 01-collatz
     ./run.sh >/dev/null
 
-    Go: 0.3
-    Java: 0.63
-    PHP: 6.24
-    Python3: 13.01
-    Pypy3: 0.51
-    TCL: 14.77
-    Lua: 9.69
-    LuaJit: 0.65
+    C (long long): 0.69
+    Go: 1.04
+    Java: 1.31
+    PHP: 20.17
+    Python3: 42.08
+    Pypy3: 1.92
+    TCL: 47.79
+    Lua: 31.81
+    LuaJit: 2.10
 
 Note that for Go and Java times are small so there is inaccuracy due to compiling code before running
 
@@ -47,9 +43,12 @@ show better performance compared to "random-access".
     cd 02-primes
     ./run.sh >/dev/null
 
-    Go: 4.64
-    Java: 1.67
-    PHP: 12.10
+    C (long long): 4.28
+    Go: 4.65
+    Go (int32): 1.75
+    Java: 1.60
+    Java (long): 4.82
+    PHP: 11.99
     Python3: 42.57
     Pypy3: 7.31
     TCL (list): 63.30

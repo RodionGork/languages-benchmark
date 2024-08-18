@@ -5,7 +5,7 @@ import (
     "os"
 )
 
-var primes = []int{2, 3, 5, 7}
+var primes = []int{2, 3, 5, 7} // could be preallocated but it doesn't improve speed (as of 1.22.6)
 
 func isPrime(x int) bool {
     for _, d := range primes {

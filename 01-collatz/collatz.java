@@ -1,5 +1,5 @@
 class Collatz {
-	static int collatz(int x) {
+	static int collatz(long x) {
 		int cnt = 0;
 		while (x > 1) {
 			x = x % 2 != 0 ? 3 * x + 1 : x / 2;

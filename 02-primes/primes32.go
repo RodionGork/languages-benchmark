@@ -5,11 +5,11 @@ import (
     "os"
 )
 
-var primes []int
+var primes = []int32{2, 3, 5, 7}
 
-func isPrime(x int) bool {
+func isPrime(x int32) bool {
     for _, d := range primes {
-        if d * d > x {
+        if x / d < d {
             return true
         } else if x % d == 0 {
             return false
@@ -21,16 +21,10 @@ func isPrime(x int) bool {
 func main() {
     var n int
     fmt.Sscanf(os.Getenv("MAXN"), "%d", &n)
-    primes = make([]int, n, n)
-    for i, v := range []int{2, 3, 5, 7} {
-        primes[i] = v
-    }
-    c := 4
-    for i := 9; true; i += 2 {
+    for i := int32(9); true; i += 2 {
         if isPrime(i) {
-            primes[c] = i
-            c++
-            if c == n {
+            primes = append(primes, i)
+            if len(primes) == n {
                 fmt.Printf("primes[%d] = %d\n", n, primes[n-1])
                 break
             }

@@ -1,9 +1,9 @@
 class Primes {
-	static int[] primes;
+	static long[] primes;
 
-	static boolean isPrime(int x) {
-		for (int d : primes) {
-			if (x / d < d) return true;
+	static boolean isPrime(long x) {
+		for (long d : primes) {
+			if (d * d > x) return true;
 			if (x % d == 0) return false;
 		}
 		throw new RuntimeException("never should get here");
@@ -11,7 +11,7 @@ class Primes {
 	
 	public static void main(String[] argv) {
 		int maxN = Integer.parseInt(System.getenv("MAXN"));
-		primes = new int[maxN];
+		primes = new long[maxN];
 		primes[0] = 2;
 		primes[1] = 3;
 		primes[2] = 5;
@@ -19,7 +19,7 @@ class Primes {
 		int c = 4;
 		for (int i = 9; true; i += 2) {
 			if (isPrime(i)) {
-				primes[c++] = i;
+				primes[c++] = (long)i;
 				if (c == maxN) {
 					System.out.printf("primes[%d] = %d%n",
 						maxN, primes[maxN - 1]);
