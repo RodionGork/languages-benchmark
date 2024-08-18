@@ -5,7 +5,7 @@ import (
     "os"
 )
 
-var primes = []int{2, 3, 5, 7}
+var primes []int
 
 func isPrime(x int) bool {
     for _, d := range primes {
@@ -21,10 +21,16 @@ func isPrime(x int) bool {
 func main() {
     var n int
     fmt.Sscanf(os.Getenv("MAXN"), "%d", &n)
+    primes = make([]int, n, n)
+    for i, v := range []int{2, 3, 5, 7} {
+        primes[i] = v
+    }
+    c := 4
     for i := 9; true; i += 2 {
         if isPrime(i) {
-            primes = append(primes, i)
-            if len(primes) == n {
+            primes[c] = i
+            c++
+            if c == n {
                 fmt.Printf("primes[%d] = %d\n", n, primes[n-1])
                 break
             }

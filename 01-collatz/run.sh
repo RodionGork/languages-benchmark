@@ -3,10 +3,13 @@
 export MAXN=1000000
 TIME="/usr/bin/time -f %e"
 
-# just to pre-compile
-MAXN=10 go run collatz.go > /dev/null
+go build collatz.go
+echo -n "Go: " 1>&2 ; $TIME ./collatz
+rm collatz
 
-echo -n "Go: " 1>&2 ; $TIME go run collatz.go
+javac collatz.java
+echo -n "Java:" 1>&2 ; $TIME java Collatz
+rm Collatz.class
 
 echo -n "PHP: " 1>&2 ; $TIME php collatz.php
 

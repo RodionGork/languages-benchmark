@@ -27,13 +27,16 @@ number of inner iterations is on order of `10^8`. Here are example times (may so
     cd 01-collatz
     ./run.sh >/dev/null
 
-    Go: 0.43
+    Go: 0.3
+    Java: 0.63
     PHP: 6.24
     Python3: 13.01
     Pypy3: 0.51
     TCL: 14.77
     Lua: 9.69
     LuaJit: 0.65
+
+Note that for Go and Java times are small so there is inaccuracy due to compiling code before running
 
 ### Primes - nested loops involving arrays
 
@@ -44,7 +47,8 @@ show better performance compared to "random-access".
     cd 02-primes
     ./run.sh >/dev/null
 
-    Go: 4.79
+    Go: 4.64
+    Java: 1.67
     PHP: 12.10
     Python3: 42.57
     Pypy3: 7.31

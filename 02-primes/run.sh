@@ -3,10 +3,17 @@
 export MAXN=1000000
 TIME="/usr/bin/time -f %e"
 
-# just to pre-compile
-MAXN=10 go run primes.go > /dev/null
+go build primes.go
+echo -n "Go: " 1>&2 ; $TIME ./primes
+rm primes
 
-echo -n "Go: " 1>&2 ; $TIME go run primes.go
+go build primes_a.go
+echo -n "Go (prealloc): " 1>&2 ; $TIME ./primes_a
+rm primes_a
+
+javac primes.java
+echo -n "Java: " 1>&2 ; $TIME java Primes
+rm Primes.class
 
 echo -n "PHP: " 1>&2 ; $TIME php primes.php
 
