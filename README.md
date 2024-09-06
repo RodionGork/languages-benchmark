@@ -23,14 +23,15 @@ number of inner iterations is on order of `10^8`. Here are example times (may so
     ./run.sh >/dev/null
 
     C (long long): 0.69
-    Go: 1.04
-    Java: 1.31
-    PHP: 20.17
-    Python3: 42.08
-    Pypy3: 1.92
-    TCL: 47.79
-    Lua: 31.81
-    LuaJit: 2.10
+    Go: 1.0
+    Java: 1.3
+    PHP: 20
+    Perl: 43
+    Python3: 42
+    Pypy3: 1.9
+    TCL: 48
+    Lua: 32
+    LuaJit: 2.1
 
 Note that for Go and Java times are small so there is inaccuracy due to compiling code before running
 
@@ -43,16 +44,17 @@ show better performance compared to "random-access".
     cd 02-primes
     ./run.sh >/dev/null
 
-    C (long long): 4.28
-    Go: 4.65
-    Go (int32): 1.75
-    Java: 1.60
-    Java (long): 4.82
-    PHP: 11.99
-    Python3: 42.57
-    Pypy3: 7.31
-    TCL (list): 63.30
-    TCL (array): 104.78
-    TCL (dict): 112.41
-    Lua: 33.75
-    LuaJit: 2.18
+    C (long long): 4.3
+    Go: 4.7
+    Go (int32): 1.8
+    Java: 1.6
+    Java (long): 4.8
+    PHP: 12
+    Perl: 43
+    Python3: 43
+    Pypy3: 7.3
+    TCL (list): 63
+    TCL (array): 105
+    TCL (dict): 112
+    Lua: 34
+    LuaJit: 2.2

@@ -17,6 +17,8 @@ rm Collatz.class
 
 echo -n "PHP: " 1>&2 ; $TIME php collatz.php
 
+echo -n "Perl: " 1>&2 ; $TIME perl collatz.pl
+
 echo -n "Python3: " 1>&2 ; $TIME python3 collatz.py
 
 echo -n "Pypy3: " 1>&2 ; $TIME pypy collatz.py

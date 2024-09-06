@@ -25,6 +25,8 @@ rm Primes.class
 
 echo -n "PHP: " 1>&2 ; $TIME php primes.php
 
+echo -n "Perl: " 1>&2 ; $TIME perl primes.pl
+
 echo -n "Python3: " 1>&2 ; $TIME python3 primes.py
 
 echo -n "Pypy3: " 1>&2 ; $TIME pypy primes.py
