@@ -40,3 +40,7 @@ echo -n "TCL (dict): " 1>&2 ; $TIME tclsh primes_d.tcl
 echo -n "Lua: " 1>&2 ; $TIME lua primes.lua
 
 echo -n "LuaJit: " 1>&2 ; $TIME luajit primes.lua
+
+erlc primes.erl
+echo -n "Erlang: " 1>&2 ; $TIME erl -noshell -s primes -s init stop
+rm primes.beam

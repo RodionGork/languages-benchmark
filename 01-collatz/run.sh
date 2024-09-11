@@ -12,7 +12,7 @@ echo -n "Go: " 1>&2 ; $TIME ./collatz
 rm collatz
 
 javac collatz.java
-echo -n "Java:" 1>&2 ; $TIME java Collatz
+echo -n "Java: " 1>&2 ; $TIME java Collatz
 rm Collatz.class
 
 echo -n "PHP: " 1>&2 ; $TIME php collatz.php
@@ -28,3 +28,7 @@ echo -n "TCL: " 1>&2 ; $TIME tclsh collatz.tcl
 echo -n "Lua: " 1>&2 ; $TIME lua collatz.lua
 
 echo -n "LuaJit: " 1>&2 ; $TIME luajit collatz.lua
+
+erlc collatz.erl
+echo -n "Erlang: " 1>&2 ; $TIME erl -noshell -s collatz -s init stop
+rm collatz.beam

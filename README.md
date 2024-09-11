@@ -32,6 +32,7 @@ number of inner iterations is on order of `10^8`. Here are example times (may so
     TCL: 48
     Lua: 32
     LuaJit: 2.1
+    Erlang: 3.9
 
 Note that for Go and Java times are small so there is inaccuracy due to compiling code before running
 
@@ -58,3 +59,4 @@ show better performance compared to "random-access".
     TCL (dict): 112
     Lua: 34
     LuaJit: 2.2
+    Erlang: 66
