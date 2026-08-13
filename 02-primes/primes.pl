@@ -1,6 +1,6 @@
 $target = $ENV{'MAXN'};
 
-@primes = (2, 3, 4, 5);
+@primes = (2, 3, 5, 7);
 
 sub is_prime {
     my ($x) = @_;
